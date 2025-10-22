@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReservU</title>
+<link rel="icon" type="image/png" href="/public/img/reservU-logo-favicon.png">
+
+
+  <!-- Font -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+
+
+  <!-- font awesome css-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- Additional CSS Files for template Design -->
+  <link rel="stylesheet" href="/public/css/reservU.css">
+  <link rel="stylesheet" href="/public/css/animated.css">
+  <link rel="stylesheet" href="/public/css/owl.css">
+
+  <!-- Css for info -->
+  <link rel="stylesheet" href="/public/css/style.css">
+
+  <style>
+    body {
+        background-image: url(/public/img/background-star2.jpg);
+        background-size: cover;
+    }
+</style>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .column:nth-child(1) {
+    background:  rgb(133, 109, 241); 
+    border-top-right-radius: 20px;
+    color: white;
+}
+  .column:nth-child(2) {
+    background:  rgb(133, 109, 241); 
+    border-top-right-radius: 20px;
+    color: white;
+}
+  .column:nth-child(3) {
+    background:  rgb(133, 109, 241); 
+    border-top-right-radius: 20px;
+    color: white;
+}
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+  }
+
+  .container-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 20px;
+  }
+
+  .column {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .column .info-img {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 8px 8px 0 0;
+  }
+  .column h2 {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .column p {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .footer {
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .page-count {
+    margin-left: 20px;
+  }
+
+  .page-icons {
+    margin-right: 20px;
+  }
+
+  .footer-page {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .footer-page.active {
+    background-color: #0077ff;
+    color: white;
+  }
+</style>
+
+</head>
+
+<body>
+
+  <!-- ***** Header Area Start ***** -->
+
+  <header class="header-area header-area-main-page header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container" >
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="/info2-lect" class="logo">
+              <img src="/public/img/logo.png" width="300px" alt="ReservU">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+                <li><a href="/lecturer/mainpage"  class="active">Browse Rooms</a></li>
+                <li><a href="/lecturer/status">Status</a></li>
+                <li><a href="/lecturer/history">History</a></li>
+                <li><a href="/lecturer/dashboard">Dashboard</a></li>
+              <li>
+                <form id="logout-form">
+                  <button class="gradient-button-logout" type="button" onclick="logout()" style="text-decoration: none; color: #DE2020;">
+                      <div style="padding:0px;">
+                          <img id="btnlogout" src="/public/img/sign in.png" alt="Log out" style="width: 30px; height:40px;"> 
+                          Log Out
+                      </div>
+                  </button>
+              </form>
+
+              </li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+
+
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+    <div class="container-block">
+        <div class="column">
+          <img class="info-img" src="/public/img/multimedia left.jpg" alt="multimedia">
+          <h2 class="text-light">Multimedia Room</h2>
+          <p class="text-light">A multimedia room is a dedicated space equipped with advanced audiovisual technology for presentations, meetings, training, and collaboration. It features large displays, high-quality sound systems, connectivity options, and often includes video conferencing tools. The room is designed to enhance communication, engagement, and productivity in various professional and educational settings.</p>
+          <h2 class="text-light">Things that we will provide</h2>
+          <ul>
+            <li>Television</li>
+            <li>Radio</li>
+            <li>Internet</li>
+            <li>Sofa</li>
+            <li>Entertainment</li>
+          </ul>
+        </div>
+        <div class="column">
+          <img class="info-img" src="/public/img/small left.jpg" alt="small" width="450">
+          <h2 class="text-light">Small Study Room</h2>
+          <p class="text-light">A small study room is a compact, dedicated space designed for focused learning and academic pursuits. Despite its size, it contains essential furniture such as a desk, chair, and storage solutions to maximize functionality and organization. With efficient use of space and adequate lighting, it provides a conducive environment for concentration and productivity.
+            <h2 class="text-light">Things that we will provide</h2>
+            <ul>
+              <li>Compact desk and chairs</li>
+              <li>white board</li>
+              <li>Noise cancelling</li>
+            </ul>
+        </div>
+        <div class="column">
+          <img class="info-img" src="/public/img/big left.jpg" alt="big" width="450">
+          <h2 class="text-light">Big Study Room</h2>
+          <p class="text-light">A big study room is a spacious and well-equipped area designed for focused learning, research, and academic pursuits. It offers ample room for multiple workstations, comfortable seating arrangements, and extensive storage solutions. With generous natural light and expansive surfaces, it provides an inviting environment conducive to concentration and productivity.
+            <h2 class="text-light">Things that we will provide</h2>
+            <ul>
+              <li>Large desk and comfortable chairs</li>
+              <li>Inspirational decor</li>
+              <li>White board</li>
+              <li>Noise cancelling</li>
+            </ul>
+        </div>
+      </div>
+  <!-- footer page -->
+<div class="footer">
+  <div class="page-count">
+    <p><strong>Show Page 2 of 2</strong></p>
+  </div>
+  <div class="page-icons">
+    <a class="footer-page" href="/info1-lect">1</a>
+    <a class="footer-page active" href="/info2-lect">2</a>
+  </div>
+  <a href="/lecturer/mainpage" class="footer-page">Back</a>
+</div>
+<script>
+  const pageIcons = document.querySelectorAll('.footer-page');
+
+  pageIcons.forEach(icon => {
+    icon.addEventListener('click', function () {
+      pageIcons.forEach(otherIcon => {
+        otherIcon.classList.remove('active');
+        otherIcon.style.backgroundColor = ''; // Remove background color from all icons
+        otherIcon.style.color = 'grey'; // Reset text color
+      });
+      this.classList.add('active');
+      this.style.backgroundColor = '#ffd1e6'; // Change background color for active icon to crayon
+      this.style.color = 'blue'; // Change text color for active icon to blue
+    });
+  });
+  
+
+</script>
+
+  <!-- ________________________JS Script____________________________ -->
+
+  <script src="/public/jquery/jquery.min.js"></script>
+  <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/public/js/owl-carousel.js"></script>
+  <script src="/public/js/animation.js"></script>
+  <script src="/public/js/popup.js"></script>
+  <script src="/public/bootstrap/js/sweetalert2@11.js"></script>
+  <script src="/public/js/index.js"></script>
+
+<!-- ________________________End of JS Script_______________________ -->
+</body>
+</html>

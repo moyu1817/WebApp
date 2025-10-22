@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReservU</title>
+  <link rel="icon" type="image/png" href="/public/img/reservU-logo-favicon.png">
+
+
+
+  <!-- Font -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+
+
+  <!-- font awesome css-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- Additional CSS Files for template Design -->
+  <link rel="stylesheet" href="/public/css/reservU.css">
+  <link rel="stylesheet" href="/public/css/animated.css">
+  <link rel="stylesheet" href="/public/css/owl.css">
+
+  <!-- Css for info -->
+  <link rel="stylesheet" href="/public/css/style.css">
+
+
+</head>
+<style>
+  body {
+    background-image: url(/public/img/background-star2.jpg);
+    background-size: cover;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .column:nth-child(1) {
+    background: rgb(133, 109, 241);
+    border-radius: 20px;
+    color: white;
+  }
+
+  .column:nth-child(2) {
+    background: rgb(133, 109, 241);
+    border-radius: 20px;
+    color: white;
+  }
+
+  .column:nth-child(3) {
+    background: rgb(133, 109, 241);
+    border-radius: 20px;
+    color: white;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+  }
+
+  .container-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 100px auto;
+  }
+
+  .column {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+  }
+
+  .column .info-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .column h2 {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .column p {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* Style for the welcome message */
+  .welcome-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.719);
+    text-align: center;
+    padding: 30px;
+    z-index: 1;
+    /* Ensure the message is on top of the video */
+    border-radius: 30px;
+    width: 1500px;
+  }
+</style>
+
+<body>
+
+
+
+  <!-- ***** Header Area Start ***** -->
+
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="/" class="logo">
+              <img src="/public/img/logo.png" width="300px" alt="ReservU">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <!-- <li><a href="#home" class="active">Home</a></li>
+              <li><a href="#room-booking">Room Booking</a></li>
+              <li><a href="#status">Status</a></li>
+              <li><a href="#history">History</a></li> 
+              <li><a href="#dashboard">Dashboard</a></li> -->
+
+              <li class="active">
+                <div class="gradient-button-login" type="button" data-bs-toggle="modal" data-bs-target="#modalId">
+                  <a id="modal_trigger" href="#modal" style="text-decoration: none;"><img id="signin-logo"
+                      src="/public/img/sign in.png" alt="sign in" style="width: 30px;">Sign in
+                    now
+                </div>
+
+              </li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+
+
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+
+
+
+  <!-- _______________________________Sign in and Register Modal_________________________ -->
+
+  <section>
+    <!-- sign in -->
+
+    <div style="color: black; text-align: center; background-color: #504CFF;">
+
+      <!-- Modal Body -->
+      <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+      <div class="modal fade my-modal-bg" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+          <div class="modal-content">
+            <h2>Login</h2>
+            <div class="modal-header border-bottom-0 ">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body border-bottom-0 ">
+
+              <div><input class="btn input-btn my-3" type="text" placeholder="Username" id="username"></div>
+              <input class="btn input-btn" type="password" placeholder="password" id="password">
+            </div>
+            <div class="modal-footer border-top-0 d-flex justify-content-center">
+
+              <button id="btn-login" class="btn btn-dark mx-2 ">Login</button>
+              <button id="btnRegister" class="btn btn-primary mx-2" onclick=" openRegisterModal()">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal2" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm " role="document">
+          <div class="modal-content">
+            <h2>Register</h2>
+            <div class="modal-header border-bottom-0">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+              <input id="username-reg" class="btn input-btn my-3" type="text" placeholder="Username">
+              <input id="full-name" class="btn input-btn my-3" type="text" placeholder="full-name"> 
+              <input id="email" class="btn input-btn my-3" type="text" placeholder="Email">
+              <input class="btn input-btn my-3" id="password-reg" type="password" placeholder="password">
+              <input class="btn input-btn my-3" id="confirmPassword-reg" type="password" placeholder="confirmPassword">
+            </div>
+            <div class="modal-footer border-top-0 d-flex justify-content-center">
+              <button id="btnRegister2" class="btn btn-primary mx-2" onclick="register()">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- _____________________________End of Sign in and Register Modal _______________________________ -->
+
+
+
+
+  <!-- *************************************************** -->
+  <!-- ******************************Home*************************** -->
+  <!-- Video Section -->
+  <div id="home" class="main-banner wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+    <!-- Video background -->
+    <video autoplay loop muted id="video-background">
+      <!-- MP4 video source -->
+      <source src="/public/video/welcome-page.mp4" type="video/mp4">
+      <!-- Fallback content if video is not supported -->
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Welcome Message -->
+    <div class="welcome-message">
+      <h4 style="color: rgb(129, 0, 129); font-weight: bold; font-size: 42px;">Welcome to our study and multimedia room
+        booking platform!</h4>
+      <br>
+      <p style="color: black; font-size: 24px;  line-height: 1.5;">Embark on a journey of productivity and creativity
+        with our tailored spaces designed for both focused study sessions and immersive multimedia experiences.Step into
+        a haven of tranquility and concentration, equipped with all the essentials to enhance your learning and
+        productivity. From quiet study rooms to collaborative spaces, we offer a variety of options to cater to your
+        individual preferences and needs.Unleash your creativity and immerse yourself in a world of multimedia
+        possibilities. Whether you're a student working on a project, a professional in need of a quiet space for video
+        editing, or simply seeking a cozy corner to dive into your favorite book or movie, our multimedia rooms are
+        equipped with state-of-the-art technology and amenities to elevate your experience.Experience the perfect blend
+        of comfort, functionality, and innovation as you embark on your journey of knowledge and creativity. Reserve
+        your study or multimedia room today and unlock your full potential with us!</p>
+    </div>
+  </div>
+  <div class="container"
+    style="text-align: center; padding: 40px; background:aliceblue; margin-top: 50px; margin-bottom: 50px;">
+    <h1 style="font-weight: bold;">Here is Your Options!</h1>
+  </div>
+  <!-- Info - 1 -->
+  <div class="info-page">
+    <table width="100%">
+      <tr>
+        <td class="image-container" align="left" style="border: none;">
+          <img src="/public/img/multimedia left.jpg" alt="Left Image" style="border: none; margin-left: 100px;">
+        </td>
+        <td align="center" style="border: none;">
+          <h1>Multimedia Rooms</h1>
+        </td>
+        <td class="image-container" align="right" style="border: none;">
+          <img src="/public/img/multimedia right.jpg" alt="Right Image" style="border: none; margin-right: 100px;">
+        </td>
+      </tr>
+      <tr>
+        <td class="image-container" align="left" style="border: none;">
+          <img src="/public/img/small left.jpg" alt="Left Image" style="border: none; margin-left: 100px;">
+        </td>
+        <td align="center" style="border: none;">
+          <h1 style="border: none;">Small Study Rooms</h1>
+        </td>
+        <td class="image-container" align="right" style="border: none;">
+          <img src="/public/img/small right.jpg" alt="Right Image" style="border: none; margin-right: 100px;">
+        </td>
+      </tr>
+      <tr>
+        <td class="image-container" align="left" style="border: none;">
+          <img src="/public/img/big left.jpg" alt="Left Image" style="border: none; margin-left: 100px;">
+        </td>
+        <td align="center" style="border: none;">
+          <h1>Big Study Rooms</h1>
+        </td>
+        <td class="image-container" align="right" style="border: none;">
+          <img src="/public/img/big right.jpg" alt="Right Image" style="border: none; margin-right: 100px;">
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="container"
+    style="text-align: center; padding: 40px; background:aliceblue; margin-top: 50px; margin-bottom: 0px;">
+    <h1 style="font-weight: bold;">More Information About The Rooms!</h1>
+  </div>
+  <!-- Info2 -->
+  <div class="container-block">
+    <div class="column">
+      <img class="info-img" src="/public/img/multimedia left.jpg" alt="multimedia">
+      <h2 class="text-light">Multimedia Room</h2>
+      <p class="text-light">A multimedia room is a dedicated space equipped with advanced audiovisual technology for
+        presentations, meetings, training, and collaboration. It features large displays, high-quality sound systems,
+        connectivity options, and often includes video conferencing tools. The room is designed to enhance
+        communication, engagement, and productivity in various professional and educational settings.</p>
+      <h2 class="text-light">Things that we will provide</h2>
+      <ul>
+        <li>Television</li>
+        <li>Radio</li>
+        <li>Internet</li>
+        <li>Sofa</li>
+        <li>Entertainment</li>
+      </ul>
+    </div>
+    <div class="column">
+      <img class="info-img" src="/public/img/small left.jpg" alt="small" width="450">
+      <h2 class="text-light">Small Study Room</h2>
+      <p class="text-light">A small study room is a compact, dedicated space designed for focused learning and academic
+        pursuits. Despite its size, it contains essential furniture such as a desk, chair, and storage solutions to
+        maximize functionality and organization. With efficient use of space and adequate lighting, it provides a
+        conducive environment for concentration and productivity.
+      <h2 class="text-light">Things that we will provide</h2>
+      <ul>
+        <li>Compact desk and chairs</li>
+        <li>white board</li>
+        <li>Noise cancelling</li>
+      </ul>
+    </div>
+    <div class="column">
+      <img class="info-img" src="/public/img/big left.jpg" alt="big" width="450">
+      <h2 class="text-light">Big Study Room</h2>
+      <p class="text-light">A big study room is a spacious and well-equipped area designed for focused learning,
+        research, and academic pursuits. It offers ample room for multiple workstations, comfortable seating
+        arrangements, and extensive storage solutions. With generous natural light and expansive surfaces, it provides
+        an inviting environment conducive to concentration and productivity.
+      <h2 class="text-light">Things that we will provide</h2>
+      <ul>
+        <li>Large desk and comfortable chairs</li>
+        <li>Inspirational decor</li>
+        <li>White board</li>
+        <li>Noise cancelling</li>
+      </ul>
+    </div>
+  </div>
+  <!-- ************************End of Home*********************************** -->
+
+
+
+
+
+  <!-- ________________________ Footer ___________________________-->
+  <div>
+    <footer id="footer1" class="bg-primary text-white py-5">
+      <div class="sub" id="f1">
+        <div class="subtitle">About Us</div>
+        <div class="subtitle">Products</div>
+        <div class="subtitle">Awards</div>
+        <div class="subtitle">Help</div>
+        <div class="subtitle">Contact</div>
+      </div><br><br>
+
+      <div class="container" id="text">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          repellat maiores voluptate quaerat perferendis voluptates, eius id
+          rerum rem voluptatibus error quisquam cum beatae ipsa sapiente,
+          officia, cumque ea illo.</p>
+      </div>
+      <div class="container" id="social">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook"
+          viewBox="0 0 16 16">
+          <path
+            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter"
+          viewBox="0 0 16 16">
+          <path
+            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google"
+          viewBox="0 0 16 16">
+          <path
+            d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram"
+          viewBox="0 0 16 16">
+          <path
+            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin"
+          viewBox="0 0 16 16">
+          <path
+            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github"
+          viewBox="0 0 16 16">
+          <path
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+        </svg>
+      </div>
+
+    </footer>
+    <footer id="footer2">
+      <p>© 2020 Copyright: MDBoostrap.com</p>
+    </footer>
+  </div>
+
+
+  <!-- ___________________________________________________ -->
+  </div>
+  <!-- **************************End of Status**************************** -->
+
+  <!-- _________________________End of HTML and CSS____________________ -->
+
+
+
+  <!-- ________________________JS Script____________________________ -->
+
+  <script src="/public/jquery/jquery.min.js"></script>
+  <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/public/js/notiflix-aio-3.2.6.min.js"></script>
+  <script src="/public/js/owl-carousel.js"></script>
+  <script src="/public/js/animation.js"></script>
+  <script src="/public/js/popup.js"></script>
+  <script src="/public/bootstrap/js/sweetalert2@11.js"></script>
+  <script src="/public/js/index.js"></script>
+
+  <!-- ________________________End of JS Script_______________________ -->
+
+  <script>
+
+
+    // Login
+   // Client-side code
+   document.querySelector('#btn-login').onclick = async function (e) {
+    e.preventDefault();
+    const username = document.querySelector('#username').value;
+    const password = document.querySelector('#password').value;
+
+    try {
+        const options = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: username, password: password })
+        };
+        const response = await fetch('/login', options);
+        console.log("Response from server is okay");
+        if (response.ok) {
+            // const data = await response.text();
+            // Notiflix.Report.success("Success: Login successful!", data, "Close");
+            // location.replace(data);
+
+            const responseData = await response.json(); // Parse response as JSON
+            const { user_id, redirectUrl } = responseData; // Extract user_id and redirectUrl
+            localStorage.setItem('user_id', user_id);
+            location.replace(redirectUrl);
+            Notiflix.Report.success("Success: Login successful!", responseData, "Close");
+
+        } else if (response.status === 401) {
+            const data = await response.text();
+            throw Error(data);
+        } else {
+            throw Error('Connection error');
+        }
+    } catch (err) {
+        console.error(err.message);
+        Notiflix.Report.failure('Error', err.message, 'Close');
+    }
+};
+
+
+    // --------------- Check username -----------------     
+
+    // Check username
+    // Assuming you have a database connection already established
+    // Client-side code to check username availability
+// Client-side code to check username availability
+// Client-side code to check username availability
+document.querySelector('#username-reg').addEventListener('input', async function (e) {
+    const username_input = e.target.value;
+
+    try {
+        const options = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: username_input })
+        };
+        const response = await fetch('/checkUsername', options);
+        if (response.ok) {
+            const data = await response.text();
+            // Display message based on response
+            if (data === 'Username available') {
+                // Username is available
+                Notiflix.Report.success("Username is available!", data, "Close");
+            } else {
+                // Username is not available
+                Notiflix.Report.failure('Error', "Username already exists. Please choose another one.", 'Close');
+            }
+        } else {
+            const errorMessage = await response.text();
+            throw Error(errorMessage);
+            Notiflix.Report.failure('Error', errorMessage, 'Close');
+        }
+    } catch (err) {
+        console.error(err.message);
+        // Display the error message
+        Notiflix.Report.failure('Error', err.message, 'Close');
+    }
+});
+
+async function register() {
+    const username_input = document.getElementById("username-reg").value;
+    const full_name_input = document.getElementById("full-name").value;
+    const email_input = document.getElementById("email").value;
+    const password_input = document.getElementById("password-reg").value;
+    const confirmPassword_input = document.getElementById("confirmPassword-reg").value;
+
+    // Validate all fields are filled
+    if (!username_input || !full_name_input || !email_input || !password_input || !confirmPassword_input) {
+        Notiflix.Report.failure("Error", "Please fill out all fields", "Close");
+        return;
+    }
+    // Validate password and confirmPassword
+    if (password_input !== confirmPassword_input) {
+        Notiflix.Report.failure("Error", "Password and Confirm Password do not match", "Close");
+        return;
+    }
+
+    // Check if the username is available
+    try {
+        const options = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: username_input })
+        };
+        const response = await fetch('/checkUsername', options);
+        if (response.ok) {
+            const data = await response.text();
+            if (data === 'Username available') {
+                // Proceed with registration
+                const userData = {
+                    username: username_input,
+                    name: full_name_input,
+                    email: email_input,
+                    password: password_input,
+                    role_id: 1
+                };
+                const registerOptions = {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(userData),
+                };
+                const registerResponse = await fetch("/register", registerOptions);
+                if (registerResponse.ok) {
+                    Notiflix.Report.success("Success: Your account has been created! ", "Registration successful", "Close");
+                    window.location.replace("/");
+                } else {
+                    throw Error("Registration failed");
+                }
+            } else {
+                // Username not available
+                Notiflix.Report.failure('Error', "Username already exists. Please choose another one.", 'Close');
+            }
+        } else {
+            const errorMessage = await response.text();
+            throw Error(errorMessage);
+        }
+    } catch (err) {
+        console.error(err.message);
+        Notiflix.Report.failure("Error: Oops! Something went wrong. Please try again.", err.message, "Close");
+    }
+}
+  
+
+  </script>
+</body>
+
+</html>

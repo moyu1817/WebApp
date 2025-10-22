@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReservU</title>
+  <link rel="icon" type="image/png" href="/public/img/reservU-logo-favicon.png">
+
+
+  <!-- Font -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+
+
+  <!-- font awesome css-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- Additional CSS Files for template Design -->
+  <link rel="stylesheet" href="/public/css/reservU.css">
+  <link rel="stylesheet" href="/public/css/animated.css">
+  <link rel="stylesheet" href="/public/css/owl.css">
+
+  <!-- Css for info -->
+  <link rel="stylesheet" href="/public/css/style.css">
+
+  <style>
+    body {
+      background-image: url(/public/img/background-star2.jpg);
+      background-size: cover;
+
+    }
+  </style>
+
+  </style>
+  <style>
+    .container-body {
+      display: flex;
+      white-space: nowrap;
+      margin-bottom: 10px;
+      text-align: center;
+      padding-top: 130px;
+      color: rgb(0, 8, 124);
+      font-weight: bold;
+    }
+
+    .col1 {
+
+      justify-content: space-between;
+      flex: 1;
+      margin-right: 100px;
+    }
+
+    .col2 {
+
+      justify-content: center;
+      flex: 1;
+
+    }
+
+    .row1 {
+      background-color: #F7FAA1;
+      flex: 1;
+      padding: 40px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      white-space: nowrap;
+      margin-top: 20px;
+    }
+
+    .row2 {
+      background-color: #007ee5;
+      flex: 1;
+      padding: 40px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      white-space: nowrap;
+    }
+
+    .row3 {
+      background-color: #F898A4;
+      flex: 1;
+      padding: 40px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      white-space: nowrap;
+
+    }
+
+    #imgapp {
+      width: 80%;
+      margin-top: 0px;
+      padding-left: 30px;
+
+    }
+
+    .dash {
+      font-size: 40px;
+      border: 20px;
+
+      font-weight: bold;
+    }
+
+    /* hearder edit for used in this page */
+
+    .main-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* padding:0px  0px 0px 0px; */
+      margin-top: -15px;
+      margin-right: -5px;
+    }
+
+    .logo {
+      margin-right: 20px;
+      /* Add margin to the right */
+    }
+
+    .nav {
+      display: flex;
+      list-style-type: none;
+      margin-top: 5px;
+
+    }
+
+
+    .nav a {
+      text-decoration: none;
+      color: #333333;
+      font-weight: bold;
+    }
+
+    .nav a.active {
+      color: #007ee5;
+      /* Change the color for active link */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ***** Header Area Start ***** -->
+
+  <header class="header-area header-area-main-page header-sticky wow slideInDown" data-wow-duration="0.75s"
+    data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="/lecturer/dashboard" class="logo">
+              <img src="/public/img/logo.png" width="300px" alt="ReservU">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="/lecturer/mainpage">Browse Rooms</a></li>
+              <li><a href="/lecturer/status">Status</a></li>
+              <li><a href="/lecturer/history">History</a></li>
+              <li><a href="/lecturer/dashboard" class="active">Dashboard</a></li>
+              <li>
+                <form id="logout-form">
+                
+                  <button class="gradient-button-logout" type="button" onclick="logout()" style="text-decoration: none; color: #DE2020;">
+                    <div style="padding:0px;">
+                      <img id="btnlogout" src="/public/img/sign in.png" alt="Log out" style="width: 30px; height:40px;">
+                      Log Out
+                    </div>
+                  </button>
+                </form>
+
+              </li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+
+
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+ 
+  <div class="container-body">
+
+    <div class="col1">
+      <div class="row1">
+
+        <h3>Request Status</h3>
+        <h1 id="requestStatus"></h1>
+
+      </div>
+      <div class="row2">
+
+        <h3>Total room</h3>
+        <h1 id="totalRoom"></h1>
+
+      </div>
+      <div class="row3">
+
+        <h3>Reserved Slots</h3>
+        <h1 id="reservedSlots"></h1>
+      </div>
+    </div>
+    <div class="col2">
+      
+      <canvas id="myDoughnutChart"></canvas>
+    </div>
+  </div> 
+  
+ 
+
+  <script>
+ // Function to fetch room counts from the server
+function fetchRoomCountsFromServer() {
+    // Make a GET request to the server to fetch room counts
+    fetch('/roomCounts')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(roomCounts => {
+            // Call function to render room counts
+            renderRoomCounts(roomCounts);
+        })
+        .catch(error => {
+            console.error('Error fetching room counts:', error);
+            // Handle errors
+        });
+}
+
+
+// Function to render room counts on the page
+function renderRoomCounts(roomCounts) {
+    document.getElementById("requestStatus").textContent = roomCounts.pendingSlots;
+    document.getElementById("totalRoom").textContent = roomCounts.totalRooms;
+    document.getElementById("reservedSlots").textContent = roomCounts.reservedSlots;
+    let pendingSlots = roomCounts.pendingSlots;
+    let rejectedSlots = roomCounts.rejectedSlots;
+    // Call function to render Doughnut chart
+    renderDoughnutChart(roomCounts);
+}
+
+// Function to render Doughnut chart
+function renderDoughnutChart(roomCounts) {
+    var ctx = document.getElementById('myDoughnutChart').getContext('2d');
+    var myDoughnutChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Approved', 'Pending', 'Disapproved'],
+            datasets: [{
+                label: 'Room Status',
+                data: [
+                    roomCounts.reservedSlots,
+                    roomCounts.pendingSlots,
+                    roomCounts.rejectedSlots
+                ],
+                backgroundColor: [
+                    '#B4F6A4', // Green
+                    '#F7FAA1', // Yellow
+                    '#F898A4'  // Red
+                ],
+                borderColor: [
+                '#55B653', // Green
+                    '#FACE13', // Yellow
+                    '#FD0000'  // Red
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                title: {
+                    display: true,
+                    text: 'Dashboard'
+                }
+            }
+    });
+}
+
+// Call fetchRoomCountsFromServer() when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    fetchRoomCountsFromServer();
+});
+
+  </script>
+   <!-- ________________________JS Script____________________________ -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="/public/jquery/jquery.min.js"></script>
+   <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+   <script src="/public/js/owl-carousel.js"></script>
+   <script src="/public/js/animation.js"></script>
+   <script src="/public/js/popup.js"></script>
+   <script src="/public/bootstrap/js/sweetalert2@11.js"></script>
+   <script src="/public/js/index.js"></script>
+</body>
+
+</html>

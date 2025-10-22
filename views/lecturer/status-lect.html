@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReservU</title>
+    <link rel="icon" type="image/png" href="/public/img/reservU-logo-favicon.png">
+  
+
+    <!-- Font -->
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet">
+  
+    <!-- Bootstrap core CSS -->
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+  
+  
+    <!-- font awesome css-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  
+    <!-- Additional CSS Files for template Design -->
+    <link rel="stylesheet" href="/public/css/reservU.css">
+    <link rel="stylesheet" href="/public/css/animated.css">
+    <link rel="stylesheet" href="/public/css/owl.css">
+  
+    <!-- Css for info -->
+    <link rel="stylesheet" href="/public/css/style.css">
+  
+    <style>
+      body {
+          background-image: url(/public/img/background-star2.jpg);
+          background-size: cover;
+      }
+  </style>
+  <style> 
+    
+    .container-lecturer{
+        margin-top: 130px;
+
+    }
+
+    .table th {
+        background-color: #4e75e3;
+        color: aliceblue;
+        padding: 10px;
+    }
+    .table td {
+            color: black; /* Ensure visibility */
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    th,
+    td {
+        border: 1px solid #050505;
+      padding: 12px;
+      text-align: center;
+    }
+
+    #color1 {
+        background-color: transparent;
+        color: black;
+    }
+
+    #color2 {
+        color: black;
+    }
+
+    #colorpending {
+        background-color: #f4eaa9;
+        color: #969302;
+    }
+
+    #colorapproved {
+        background-color: rgb(82, 196, 12);
+        color: #247203;
+    }
+
+    #colorrejected {
+        background-color: rgb(208, 8, 8);
+        color: #000000;
+    }
+ /* Alternate row color for history table */
+ .lec-history tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+    .status-title {
+        background-color: #008DC3;
+        color: white;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        color: rgb(0, 0, 0);
+    }
+    .pagination-container {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .pagination-button {
+        margin: 0 5px;
+        cursor: pointer;
+        background-color: #008DC3;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .pagination-button:hover {
+        background-color: #005f82;
+    }
+
+    .pagination-button.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .approve-icon {
+        color: green;
+        cursor: pointer;
+    }
+
+    .disapprove-icon {
+        color: red;
+        cursor: pointer;
+    }
+</style>
+  
+  </head>
+  
+  <body>
+  
+    <!-- ***** Header Area Start ***** -->
+  
+    <header class="header-area header-area-main-page header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+      <div class="container" >
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <!-- ***** Logo Start ***** -->
+              <a href="/lecturer/status" class="logo">
+                <img src="/public/img/logo.png" width="300px" alt="ReservU">
+              </a>
+              <!-- ***** Logo End ***** -->
+              <!-- ***** Menu Start ***** -->
+              <ul class="nav">
+                <li><a href="/lecturer/mainpage" >Browse Rooms</a></li>
+                <li><a href="/lecturer/status" class="active">Status</a></li>
+                <li><a href="/lecturer/history">History</a></li>
+                <li><a href="/lecturer/dashboard">Dashboard</a></li>
+                <li>
+                  <form id="logout-form">
+                    <button class="gradient-button-logout" type="button" onclick="logout()" style="text-decoration: none; color: #DE2020;">
+                        <div style="padding:0px;">
+                            <img id="btnlogout" src="/public/img/sign in.png" alt="Log out" style="width: 30px; height:40px;"> 
+                            Log Out
+                        </div>
+                    </button>
+                </form>
+  
+                </li>
+              </ul>
+              <a class='menu-trigger'>
+                <span>Menu</span>
+              </a>
+  
+  
+              <!-- ***** Menu End ***** -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+   
+
+    <div class="container-lecturer">
+        <h3 class="status-title text-center">Status</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Room</th>
+                    <th>Booking Date</th>
+                    <th>Booking Time</th>
+                    <th>Requested by</th>
+                    <th>Objective</th>
+                    <th>Approve</th>
+                    <th>Disapprove</th>
+                </tr>
+            </thead>
+            <tbody id="bookingTableBody">
+                <!-- Table rows will be dynamically added here -->
+            </tbody>
+        </table>
+        <div class="footer">
+            <div id="pageInfo">Showing 1 out of 1</div>
+            <div id="totalPages">1</div>
+        </div>
+        <div class="pagination-container">
+            <button class="pagination-button" id="prevBtn" disabled>&lt; Prev</button>
+            <button class="pagination-button" id="nextBtn">Next &gt;</button>
+        </div>
+    </div>
+</body>
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+            fetch('/api/bookings')
+            .then(response => response.json())
+            .then(bookings => {
+                console.log(bookings); // Log the bookings to check their statuses  
+                const tbody = document.querySelector('.table tbody');
+                bookings.forEach(booking => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${booking.room_name}</td>
+                        <td>${booking.booking_date}</td>
+                        <td>${booking.time_slot}</td>
+                        <td>${booking.requester}</td>
+                        <td>${booking.booking_objective}</td>
+                        <td>
+    <button class="btn btn-success approve-btn" data-id="${booking.booking_id}" onclick="updateBookingStatus(this, 'approve')">Approve</button>
+</td>
+<td>
+    <button class="btn btn-danger disapprove-btn" data-id="${booking.booking_id}" onclick="updateBookingStatus(this, 'disapprove')">Disapprove</button>
+</td>
+
+                    `;
+                    tbody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error loading bookings:', error));
+        });
+
+        function updateBookingStatus(button, action) {
+            const bookingId = button.getAttribute('data-id');
+            const endpoint = action === 'approve' ? `/bookings/${bookingId}/approve` : `/bookings/${bookingId}/disapprove`;
+            fetch(endpoint, { method: 'PUT' })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    button.closest('tr').remove();
+                    alert(`Booking ${action}d successfully: ${data.message}`);
+                } else {
+                    alert(data.message || `Failed to ${action} booking`);
+                }
+            })
+            .catch(error => console.error(`Error updating booking status:`, error));
+        }
+
+
+
+       document.addEventListener("DOMContentLoaded", function () {
+            const tableRows = document.querySelectorAll("tbody tr");
+            const rowsPerPage = 10;
+            let currentPage = 1;
+            const totalPages = Math.ceil(tableRows.length / rowsPerPage);
+            const pageInfo = document.getElementById("pageInfo");
+            const totalPagesDisplay = document.getElementById("totalPages");
+
+            function showRows(page) {
+                const startIndex = (page - 1) * rowsPerPage;
+                const endIndex = page * rowsPerPage;
+                tableRows.forEach((row, index) => {
+                    if (index >= startIndex && index < endIndex) {
+                        row.style.display = "";
+                    } else {
+                        row.style.display = "none";
+                    }
+                });
+            }
+
+            function updatePaginationButtons() {
+                document.getElementById("prevBtn").disabled = currentPage === 1;
+                document.getElementById("nextBtn").disabled = currentPage === totalPages;
+            }
+
+            function updatePageCounter() {
+                pageInfo.textContent = `Showing ${currentPage} out of ${totalPages}`;
+                totalPagesDisplay.textContent = totalPages;
+            }
+
+            showRows(currentPage);
+            updatePaginationButtons();
+            updatePageCounter();
+
+            document.getElementById("prevBtn").addEventListener("click", function () {
+                if (currentPage > 1) {
+                    currentPage--;
+                    showRows(currentPage);
+                    updatePaginationButtons();
+                    updatePageCounter();
+                }
+            });
+
+            document.getElementById("nextBtn").addEventListener("click", function () {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    showRows(currentPage);
+                    updatePaginationButtons();
+                    updatePageCounter();
+                }
+            });
+        });
+</script>
+  <!-- ________________________JS Script____________________________ -->
+
+  <script src="/public/jquery/jquery.min.js"></script>
+  <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/public/js/animation.js"></script>
+  <script src="/public/js/popup.js"></script>
+  <script src="/public/bootstrap/js/sweetalert2@11.js"></script>
+  <script src="/public/js/index.js"></script>
+
+<!-- ________________________End of JS Script_______________________ -->
+</html>

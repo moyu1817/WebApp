@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReservU</title>
+  <link rel="icon" type="image/png" href="/public/img/reservU-logo-favicon.png">
+
+
+  <!-- Font -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+
+
+  <!-- font awesome css-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- Additional CSS Files for template Design -->
+  <link rel="stylesheet" href="/public/css/reservU.css">
+  <link rel="stylesheet" href="/public/css/animated.css">
+  <link rel="stylesheet" href="/public/css/owl.css">
+
+  <!-- Css for info -->
+  <link rel="stylesheet" href="/public/css/style.css">
+  <style>
+    html {
+      overflow-x: hidden;
+    }
+
+    #container-table {
+      margin-top: 70px;
+    }
+
+    #photo {
+      border-radius: 25px;
+      height: 250px;
+      width: 100%;
+    }
+
+/* Styling for the room list column and all table headers */
+.table th:first-child,
+.table td:first-child,
+.table td:nth-child(2),
+.table th {
+  background-color: #121835; /* Dark background color */
+  color: white; /* White text color */
+  padding: 10px;
+  font-weight: bold; /* Bold text */
+}
+
+    th,
+    td {
+      color: white;
+      border: 3px solid white;
+      padding: 10px;
+    }
+
+    .color1 {
+      background-color: #2f80ca;
+      color: rgb(29, 9, 9);
+      text-align: center;
+    }
+
+    .table .color1 {
+      background-color: #2f80ca;
+      color: rgb(29, 9, 9);
+      text-align: center;
+    }
+
+    .table .colorFree {
+      background-color: #a8f4c4;
+      color: #247203;
+      text-align: center;
+    }
+
+    .table .colorFree:hover {
+      background-color: #02f95d;
+      color: #154600;
+    }
+
+    .table .colorReserved {
+                background-color: #f4a8b3;
+                color: #720324;
+                text-align: center;
+            }
+    
+            .table .colorPending {
+                
+                background-color: #f4eaa9;
+                color: #969302;
+                text-align: center;
+            }
+
+    .table .colorDisabled {
+      background-color: #9eabb1;
+      color: #54646c;
+      text-align: center;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      color: rgb(0, 0, 0);
+    }
+
+    .pagination-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .pagination-button {
+      margin: 0 5px;
+      cursor: pointer;
+      background-color: #2f80ca;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .pagination-button:hover {
+      background-color: #005f82;
+    }
+
+    .pagination-button.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .table td {
+      color: black;
+      padding: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ***** Header Area Start ***** -->
+
+  <header class="header-area header-area-main-page header-sticky wow slideInDown" data-wow-duration="0.75s"
+    data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="/lecturer/slot/studyBig" class="logo">
+              <img src="/public/img/logo.png" width="300px" alt="ReservU">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="/lecturer/mainpage" class="active">Browse Rooms</a></li>
+              <li><a href="/lecturer/status">Status</a></li>
+              <li><a href="/lecturer/history">History</a></li>
+              <li><a href="/lecturer/dashboard" >Dashboard</a></li>
+              <li>
+                <form id="logout-form">
+                  <button class="gradient-button-logout" type="button" onclick="logout()"
+                    style="text-decoration: none; color: #DE2020;">
+                    <div style="padding:0px;">
+                      <img id="btnlogout" src="/public/img/sign in.png" alt="Log out" style="width: 30px; height:40px;">
+                      Log Out
+                    </div>
+                  </button>
+                </form>
+
+              </li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+
+
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- Content -->
+  <div class="container-table">
+    <div class="row row-content">
+      <div class="col">
+        <div>
+          <h2 class="px-3 py-1">Study rooms(big 4-6 people)</h2>
+        </div>
+        <div class="row-1 col-12 py-3 px-3">
+          <img src="/public/img/studyroombig.jpg" alt="" id="photo" class="img-fluid">
+        </div>
+        <div class="row-2 col-12 px-3">
+          <h5 id="current-date" class="text-white text-center py-2 color1"></h5>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Room List</th>
+              <th>Room Capacity</th>
+              <th>8.00 - 10.00</th>
+              <th>10.00 - 12.00</th>
+              <th>13.00 - 15.00</th>
+              <th>15.00 - 17.00</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <!-- Table rows will be added here dynamically -->
+          </tbody>
+        </table>
+        <br><br>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div id="pageInfo" class="px-3">Showing 1 out of 1</div>
+    <div id="totalPages" class="px-2 color1" style="margin-right: 18px;">1</div>
+  </div>
+
+  </div>
+  </div>
+  <!-- ________________________JS Script____________________________ -->
+
+  <script src="/public/jquery/jquery.min.js"></script>
+  <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/public/js/notiflix-aio-3.2.6.min.js"></script>
+  <script src="/public/js/animation.js"></script>
+  <script src="/public/js/popup.js"></script>
+  <script src="/public/bootstrap/js/sweetalert2@11.js"></script>
+  <script src="/public/js/index.js"></script>
+  <!-- ________________________End of JS Script_______________________ -->
+  <!-- <script src="/public/js/study_room_small.js"></script> -->
+
+  <!-- ________________________End of JS Script_______________________ -->
+  <script>
+    // Function to update the current date
+    function updateDate() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const currentDate = now.toLocaleString('en-US', options);
+      document.getElementById('current-date').textContent = currentDate;
+    }
+
+    // Call the updateDate function to display the current date
+    updateDate();
+  </script>
+  <!-- ///////////////////////////////////////////////// -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const tableRows = document.querySelectorAll("tbody tr");
+        const rowsPerPage = 10;
+        let currentPage = 1;
+        const totalPages = Math.max(1, Math.ceil(tableRows.length / rowsPerPage));
+        const pageInfo = document.getElementById("pageInfo");
+        const totalPagesDisplay = document.getElementById("totalPages");
+
+        function showRows(page) {
+            const startIndex = (page - 1) * rowsPerPage;
+            const endIndex = page * rowsPerPage;
+            tableRows.forEach((row, index) => {
+                if (index >= startIndex && index < endIndex) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+
+        function updatePaginationButtons() {
+            document.getElementById("prevBtn").disabled = currentPage === 1;
+            document.getElementById("nextBtn").disabled = currentPage === totalPages;
+        }
+
+        function updatePageCounter() {
+            pageInfo.textContent = `Showing ${currentPage} out of ${totalPages}`;
+            totalPagesDisplay.textContent = totalPages;
+        }
+
+        showRows(currentPage);
+        updatePaginationButtons();
+        updatePageCounter();
+
+        document.getElementById("prevBtn").addEventListener("click", function () {
+            if (currentPage > 1) {
+                currentPage--;
+                showRows(currentPage);
+                updatePaginationButtons();
+                updatePageCounter();
+            }
+        });
+
+        document.getElementById("nextBtn").addEventListener("click", function () {
+            if (currentPage < totalPages) {
+                currentPage++;
+                showRows(currentPage);
+                updatePaginationButtons();
+                updatePageCounter();
+            }
+        });
+    });
+
+// Define global variables to store room ID and time slot
+let selectedRoomId = null;
+let selectedTimeSlot = null;
+
+// rooms
+function showRooms(data) {
+data.sort((a, b) => a.room_id - b.room_id);
+const time_slots = ['8-10', '10-12', '13-15', '15-17'];
+const tbody = document.querySelector('#tbody');
+let temp = '';
+const groupedData = {};
+
+data.forEach(room_list => {
+    data_list = {
+        room_id: room_list.room_id,
+        room_name: room_list.room_name,
+        capacity: room_list.capacity,
+        time_slots_data: ['free', 'free', 'free', 'free'], // Initialize with 'free'
+        status: 'free' // Default status
+    };
+
+    if (room_list.room_type === "study_room_big") {
+        if (!groupedData[room_list.room_id]) {
+            groupedData[room_list.room_id] = {
+              capacity: room_list.capacity,
+                    room_name: room_list.room_name,
+                time_slots_data: ['free', 'free', 'free', 'free'], // Initialize with 'free'
+                status: 'free' // Default status
+            };
+        }
+
+        const status_result = room_list.status === 'approved' ? 'reserved' : 
+                      (room_list.status === 'rejected' ? 'free' : 
+                      (room_list.status === 'disabled' ? 'disabled' : 'pending'));
+        time_slots.forEach((slot, index) => {
+            if (room_list.time_slot === slot) {
+                groupedData[room_list.room_id].time_slots_data[index] = status_result;
+                groupedData[room_list.room_id].status = status_result; // Update room status
+            }
+        });
+    }
+});
+
+Object.keys(groupedData).forEach(room_id => {
+        const roomData = groupedData[room_id];
+        temp += `<tr>`;
+        // Room ID column is removed from here
+        temp += `<td>${roomData.room_name}</td>`;
+        temp += `<td>${roomData.capacity}</td>`;
+    roomData.time_slots_data.forEach((status, index) => {
+        // Add 'clickable' class only to cells with 'free' status
+        const clickableClass = status === 'free' ? ' clickable' : '';
+        temp += `<td class="color${status.charAt(0).toUpperCase() + status.slice(1)}${clickableClass}" 
+                   data-room_id="${room_id}" 
+                   data-time_slot="${time_slots[index]}">${status}</td>`;
+    });
+
+    temp += `</tr>`;
+});
+
+tbody.innerHTML = temp;
+
+// Add click event listeners to clickable cells
+addClickListeners();
+}
+
+// Fetch rooms and associated bookings from the database
+async function getRooms() {
+try {
+    const response = await fetch('/student/rooms');
+    if (response.ok) {
+        const data = await response.json();
+        showRooms(data);
+    } else if (response.status == 500) {
+        const data = await response.text();
+        throw Error(data);
+    } else {
+        throw Error('Connection error');
+    }
+} catch (err) {
+    console.error(err.message);
+    alert(err.message);
+    Notiflix.Report.failure('Error', err.message, 'Close');
+}
+}
+
+// Execute code when the DOM content is loaded
+document.addEventListener("DOMContentLoaded", function() {
+getRooms(); // Fetch rooms and show them when page loads
+});
+
+
+
+    function addClickListeners() {
+      var clickableCells = document.querySelectorAll(".clickable");
+
+      clickableCells.forEach(function (cell) {
+        cell.addEventListener("click", function () {
+          // Disable the cell to prevent multiple clicks
+          this.classList.remove("clickable");
+
+          // Display a success message indicating that lecturers cannot request room booking
+          Notiflix.Report.failure("Sorry!!!, Lecturer cannot request room booking!!!", "", "Close");
+
+          // Prevent further clicks on the cell
+          this.removeEventListener("click", arguments.callee);
+        });
+      });
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReservU</title>
+  <link rel="icon" type="image/png" href="/public/img/reservU-logo-favicon.png">
+
+
+  <!-- Font -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+
+
+  <!-- font awesome css-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- Additional CSS Files for template Design -->
+  <link rel="stylesheet" href="/public/css/reservU.css">
+  <link rel="stylesheet" href="/public/css/animated.css">
+  <link rel="stylesheet" href="/public/css/owl.css">
+
+  <!-- Css for info -->
+  <link rel="stylesheet" href="/public/css/style.css">
+
+  <style>
+    body {
+        background-image: url(/public/img/background-star2.jpg);
+        background-size: cover;
+        overflow-x: hidden; /* Hide horizontal overflow */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+
+</style>
+
+  <style>
+
+/* ///////////////////////////////////////////////////////////// */
+    /* CSS styles for the table */
+    .table-container {
+      position: relative;
+      
+    }
+    #table1{
+      margin-top: 100px;
+  
+    }
+    #table2{
+      margin-top: 52px;
+
+    }
+    #table3{
+      margin-top: 4px;
+    }
+    #table4{
+      margin-top: -45px;
+    }
+
+/* ------------Approve----------- */
+.approved-text {
+  color: rgb(82, 196, 12); /* Green text for approved */
+}
+.arjan-approved {
+  color: rgb(82, 196, 12); /* Green text for approved Arjan XYZ */
+}
+/* -----------Reject------------- */
+.rejected-text {
+  color: rgb(208, 8, 8); /* Red text for rejected */
+}
+.arjan-rejected {
+  color: rgb(208, 8, 8); /* Red text for rejected Arjan XYZ */
+}
+/* -----------Pending-------------- */
+.pending-text {
+  color: rgb(255, 221, 0); /* Yellow text for pending */
+}
+.arjan-pending {
+  color: rgb(255, 221, 0); /* Yellow text for pending Arjan XYZ */
+}
+
+    td {
+      border-spacing: 0;
+    }
+
+    table.lec-history {
+      width: 100%;
+      border-collapse: collapse;
+      padding: 12px;
+      margin-top: 150px;
+      margin-bottom: 100px;
+
+
+    }
+
+    .lec-history th,
+    .lec-history td {
+      border: 1px solid #050505;
+      padding: 12px;
+      text-align: center;
+
+    }
+
+    .lec-history th {
+      color: aliceblue;
+      background-color: #4e75e3;
+    }
+
+    .lec-history tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+ 
+    /*footer*/
+    .footer-lec {
+      padding: 0px 0;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .page-count-lec {
+      margin-top: 0px;
+      margin-left: 20px;
+    }
+
+    .page-icons-lec {
+      margin-right: 20px;
+    }
+
+    .footer-page-lec {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 3px 10px;
+      border-radius: 5px;
+    }
+
+    .footer-page-lec.active {
+      background-color: #0077ff;
+      color: white;
+    }
+    /* Additional styles for responsiveness */
+@media (max-width: 768px) {
+  .reservU-table {
+    margin-top: 20px; /* Adjust margin for smaller screens */
+  }
+}
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ***** Header Area Start ***** -->
+
+  <header class="header-area header-area-main-page header-sticky wow slideInDown" data-wow-duration="0.75s"
+    data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="/lecturer/history" class="logo">
+              <img src="/public/img/logo.png" width="300px" alt="ReservU">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="/staff/mainpage" >Browse Rooms</a></li>
+              <li><a href="/staff/edit">Edit</a></li>
+              <li><a href="/staff/history1" class="active">History</a></li>
+              <li><a href="/staff/dashboard">Dashboard</a></li>
+            <li>
+                <form id="logout-form">
+                  <button class="gradient-button-logout" type="button" onclick="logout()"
+                    style="text-decoration: none; color: #DE2020;">
+                    <div style="padding:0px;">
+                      <img id="btnlogout" src="/public/img/sign in.png" alt="Log out" style="width: 30px; height:40px;">
+                      Log Out
+                    </div>
+                  </button>
+                </form>
+
+              </li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+
+
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <table id="lectHistory" class="lec-history" >
+    <thead>
+      <tr>
+        <td style="color: aliceblue; background-color: #4e75e3;">Room Name</td>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Requested by</th>
+          <th>Status</th>
+          <th>Approved/Disapproved by</th>
+          <th>Objective</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
+    
+  <!-- Footer page
+  <div class="footer-lec"> 
+    <div class="page-count-lec">
+      <p><strong>Showing 1 out of 4</strong></p>
+    </div>
+    <div class="page-icons-lec">
+      <a class="footer-page-lec active" href="#" onclick="showTable(1)">1</a>
+      <a class="footer-page-lec " href="#" onclick="showTable(2)">2</a>
+      <a class="footer-page-lec" href="#" onclick="showTable(3)">3</a>
+      <a class="footer-page-lec" href="#" onclick="showTable(4)">4</a>
+    </div>
+  </div>  -->
+
+  <script>
+fetch('/lectHistory')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch room bookings');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = ''; // Clear existing table data
+
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row.room_name}</td>
+                    <td>${row.date}</td>
+                    <td>${row.time_slot}</td>
+                    <td>${row.username}</td>
+                    <td class="${getStatusColorClass(row.status)}">${row.status}</td>
+                    <td class="${getApproveColorClass(row.status)}">${row.approve_by || '-'}</td>
+                    <td>${row.booking_objective}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        })
+        .catch(error => console.error('Error fetching room bookings:', error));
+
+    // Function to get color class for status
+    function getStatusColorClass(status) {
+        switch (status.toLowerCase()) {
+            case 'approved':
+                return 'approved-text';
+            case 'rejected':
+                return 'rejected-text';
+            default:
+                return 'pending-text';
+        }
+    }
+
+    // Function to get color class for approve/disapprove
+    function getApproveColorClass(status) {
+        switch (status.toLowerCase()) {
+            case 'approved':
+                return 'arjan-approved'; // Green color for approved
+            case 'rejected':
+                return 'arjan-rejected'; // Red color for rejected
+            default:
+                return 'arjan-pending'; // Yellow color for pending
+        }
+    }
+</script>
+  
+  <!-- ________________________JS Script____________________________ -->
+
+  <script src="/public/jquery/jquery.min.js"></script>
+  <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/public/js/owl-carousel.js"></script>
+  <script src="/public/js/animation.js"></script>
+  <script src="/public/js/popup.js"></script>
+  <script src="/public/bootstrap/js/sweetalert2@11.js"></script>
+  <script src="/public/js/index.js"></script>
+  <script src="/public/js/history-lecturer.js"></script>
+  <!-- ________________________End of JS Script_______________________ -->
+</body>
+
+</html>

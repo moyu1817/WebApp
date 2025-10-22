@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReservU</title>
+    <link rel="icon" type="image/png" href="/public/img/reservU-logo-favicon.png">
+  
+
+  <!-- Font -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+
+
+  <!-- font awesome css-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- Additional CSS Files for template Design -->
+  <link rel="stylesheet" href="/public/css/reservU.css">
+  <link rel="stylesheet" href="/public/css/animated.css">
+  <link rel="stylesheet" href="/public/css/owl.css">
+
+  <!-- Css for info -->
+  <link rel="stylesheet" href="/public/css/style.css">
+
+  <style>
+    body {
+        background-image: url(/public/img/background-star2.jpg);
+        background-size: cover;
+    }
+</style>
+
+</head>
+
+<body>
+
+  <!-- ***** Header Area Start ***** -->
+
+  <header class="header-area header-area-main-page header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container" >
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="/student/roombooking/studyBig" class="logo">
+              <img src="/public/img/logo.png" width="300px" alt="ReservU">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="/student/mainpage" class="active">Room Booking</a></li>
+              <li><a href="/student/student-status">Status</a></li>
+              <li><a href="/student/history-stu">History</a></li>
+              <li>
+                <form id="logout-form">
+                  <button class="gradient-button-logout" type="button" onclick="logout()" style="text-decoration: none; color: #DE2020;">
+                      <div style="padding:0px;">
+                          <img id="btnlogout" src="/public/img/sign in.png" alt="Log out" style="width: 30px; height:40px;"> 
+                          Log Out
+                      </div>
+                  </button>
+              </form>
+
+              </li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+
+
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  
+    <div class="container-room-booking">
+        <div class="image-section col-lg-8">
+                   
+            <div class="row-lg-8">
+                <img  class="px-2 pb-0" src="/public/img/rb-1.jpg"  width="100%" alt="rb-1">   
+                <img class="px-2 pb-0" src="/public/img/rb-4.jpg" width="100%" alt="rb-4">
+            </div>
+            <div class="row-lg-8">
+                <img class="px-2 pb-0" src="/public/img/rb-2.jpg" width="100%" alt="rb-2">
+                <img class="px-2 pb-0" src="/public/img/rb-3.jpg" width="100%" alt="rb-3">
+            </div>
+        </div>
+
+
+        <div class="form-section col-lg-4 me-3 pt-3 px-3 ms-2">
+            <form class="room-booking-form " onsubmit="return bookingroom()">
+               <div class="text-center form-padding-layout">
+                <img src="/public/img/reservU-logo.png" width="200px" alt="ReservU-logo">
+               </div>
+
+
+               <div class="text-left text-white ms-5 form-padding-layout">
+                <h3><strong>Room number:</strong> <span id="room-id">Study 1 (Big)</span></h3>
+                <h3 id="timeDisplay"><strong>Time:</strong> <span id="timeRange">8.00-10.00</span></h3>
+              </div>
+
+
+                <div class="form-padding-layout">                    
+                    <div class="form-group p-0">
+                        <label for="objective">Objective:</label>
+                        <select id="objective" name="objective" class="form-select">
+                            <option value="none">-</option>
+                            <option value="Meeting">Meeting</option>
+                            <option value="Researching">Researching/ Doing Project</option>
+                            <option value="Studying">Studying/ Tutoring</option>
+                            <option value="Watching">Watching Movies</option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                      <button id = "submit-room-booking" class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>  
+  
+  <!-- ________________________JS Script____________________________ -->
+  <script src="/public/jquery/jquery.min.js"></script>
+  <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/public/js/notiflix-aio-3.2.6.min.js"></script>
+  <script src="/public/js/animation.js"></script>
+  <script src="/public/js/popup.js"></script>
+  <script src="/public/bootstrap/js/sweetalert2@11.js"></script>
+  <script src="/public/js/index.js"></script>
+  <!-- ________________________End of JS Script_______________________ -->
+  <script src="/public/js/study_room_big.js"></script>
+
+
+  <script>
+    
+// Extract room ID and time slot from URL parameters
+const queryParams = new URLSearchParams(window.location.search);
+var roomId = queryParams.get('room_id');
+var timeSlot = queryParams.get('time_slot');
+
+console.log('Room ID:', roomId);
+console.log('Time Slot:', timeSlot);
+
+// Function to update the room number and time on the HTML page
+function updateRoomAndTime(roomId, timeSlot) {
+    // Update room number
+    console.log('Updating room number:', roomId);
+    document.getElementById('room-id').textContent = roomId;
+
+    // Update time
+    console.log('Updating time:', timeSlot);
+    document.getElementById('timeRange').textContent = timeSlot;
+}
+
+// Call the function to update room number and time
+updateRoomAndTime(roomId, timeSlot);
+
+
+// Function to get the user ID from local storage
+function getUserIdFromStorage() {
+    return localStorage.getItem('user_id');
+}
+
+// Get the user ID
+const user_id = getUserIdFromStorage();
+
+// Function to submit the booking
+async function bookingroom(event) {
+    // Prevent the default form submission behavior
+    // event.preventDefault();
+
+    // Retrieve other form data
+    const objective = document.getElementById("objective").value;
+
+    // Construct the booking data object
+    const bookingData = {
+        user_id: user_id,
+        room_id: roomId,
+        time_slot: timeSlot,
+        booking_objective: objective
+    };
+
+
+
+    // Log the booking data for debugging
+    console.log("Booking Data:", bookingData);
+
+    // Make a fetch request to submit the booking data
+    const options = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bookingData)
+    };
+
+    // Log the options for debugging
+    console.log("Fetch Options:", options);
+
+    // Make the fetch request
+    try {
+        const response = await fetch("/student/bookings", options);
+        if (response.ok) {
+            const data = await response.text();
+            Notiflix.Report.success("Booking successful!", data, "Close");
+            
+
+        } else {
+            const errorMessage = await response.text();
+            Notiflix.Report.failure('Error', errorMessage, 'Close');
+        }
+    } catch (err) {
+      
+        console.error(err.message);
+        Notiflix.Report.failure("Error during booking. Please try again later.", error, 'Close');
+    }
+}
+
+// Function to check user's booking status
+function checkBookingStatus() {
+    fetch('/check-booking')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.hasBooking) {
+                // User has a pending booking for today
+                console.log("User has a pending booking for today.");
+                // You can display a message or take appropriate action here
+                Notiflix.Report.failure('Error', "User has a pending booking for today. Please wait until tomorrow!!!", 'Close');
+                window.location.replace("/student/studyBig");
+              } else {
+                // alert(JSON.stringify(data));
+                // User does not have a pending booking for today
+                Notiflix.Report.success("User does not have a pending booking for today.", data, "Close");
+                console.log("User does not have a pending booking for today.");
+               
+               // if submit
+                
+                // You can display a message or take appropriate action here
+            
+              }
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+            Notiflix.Report.failure('Error', error, 'Close');
+      
+        });
+}
+
+// Call the function to check booking status when the page loads
+checkBookingStatus();
+
+
+
+
+// Add event listener to the form submit event
+const form = document.querySelector('.room-booking-form');
+form.addEventListener('submit', function(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
+    // Redirect the user to the desired page
+    window.location.replace("/student/studyBig");
+});
+
+
+
+  </script>
+</body>
+
+</html>
